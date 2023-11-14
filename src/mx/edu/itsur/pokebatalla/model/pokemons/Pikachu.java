@@ -16,6 +16,16 @@ import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
  */
 public class Pikachu extends Pokemon {
 
+    @Override
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Enum[] getMovimientos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /**
      * Movimientos que puede realizar el Pokémon
      */

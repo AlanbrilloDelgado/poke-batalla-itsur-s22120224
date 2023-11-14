@@ -1,10 +1,5 @@
-/**
- *
- * @author LMC Alumno
- */
+
 package mx.edu.itsur.pokebatalla.model.pokemons;
-
-
 
 import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
 import mx.edu.itsur.pokebatalla.model.moves.Trueno_ESP_Zpds;
@@ -13,6 +8,16 @@ import mx.edu.itsur.pokebatalla.model.moves.Onda_Trueno_ESTD_Zpds;
 public class Zapdos extends Pokemon {
 
     public void atacar(Moltres Mlts, Movimientos movimientos) {
+    }
+
+    @Override
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Enum[] getMovimientos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     public enum Movimientos {
         Trueno_ESP_Zpds,

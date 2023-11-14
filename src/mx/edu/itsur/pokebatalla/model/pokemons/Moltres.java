@@ -13,6 +13,16 @@ import mx.edu.itsur.pokebatalla.model.moves.Dia_Soleado_ESTD_Mlts;
 import mx.edu.itsur.pokebatalla.model.moves.Ataque_Ala_FSC_Mlts;
 public class Moltres extends Pokemon {
 
+    @Override
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Enum[] getMovimientos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public enum Movimientos {
 
         Ascuas_ESP_Mlts,

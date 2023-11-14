@@ -10,6 +10,16 @@ import mx.edu.itsur.pokebatalla.model.moves.Ataque_Ala_FSC_Mlts;
 import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
 public class Articuno extends Pokemon {
 
+    @Override
+    public void atacar(Pokemon oponente, int ordinalMovimiento) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Enum[] getMovimientos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public enum Movimientos {
         Rayo_Hielo_FSC_Arc,
         Paisaje_Nevado_ESTD_Arc,

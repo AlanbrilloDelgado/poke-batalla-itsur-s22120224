@@ -5,17 +5,15 @@
 package mx.edu.itsur.pokebatalla;
 
 
-import mx.edu.itsur.pokebatalla.model.pokemons.Bullbasaur;
+import mx.edu.itsur.pokebatalla.battles.Batalla;
+import mx.edu.itsur.pokebatalla.battles.Entrenador;
 import mx.edu.itsur.pokebatalla.model.pokemons.Articuno;
 import mx.edu.itsur.pokebatalla.model.pokemons.Zapdos;
 import mx.edu.itsur.pokebatalla.model.pokemons.Moltres;
-import mx.edu.itsur.pokebatalla.model.pokemons.Bullbasaur;
-import mx.edu.itsur.pokebatalla.model.pokemons.Pikachu;
-import mx.edu.itsur.pokebatalla.model.pokemons.Charmander;
 
 /**
  *
- * @author FJML1983
+ * @author AlanG
  */
 public class Main {
 
@@ -24,15 +22,27 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Hello PokeBatalla!");
-        
-        Pikachu pika = new Pikachu();
-        Charmander charm = new Charmander();
-        Bullbasaur bullb = new Bullbasaur();
+       
+          //Unidad 4 
         Articuno Artc1 =  new Articuno();
         Zapdos Zpd = new Zapdos();    
         Moltres Mlts =new Moltres();
         
+
+        Entrenador entre1 = new Entrenador("Chakalito");
+        entre1.capturarPokemon(Artc1);
+        entre1.capturarPokemon(Zpd);
+
+        Entrenador entre2 = new Entrenador("Chakalita");
+        entre2.capturarPokemon(Zpd);
+        entre2.capturarPokemon(Mlts);
+
+        Batalla x = new Batalla(entre1, entre2);
+        x.desarrollarBatalla();
+        
+        
+        
+      /*    UNIDAD 3
         System.out.println("->Pikachu se encuentra con un Charmander y ataca");
         pika.atacar(charm, Pikachu.Movimientos.IMPACTRUENO);
         
@@ -58,7 +68,7 @@ public class Main {
         Artc1.atacar(Mlts, Articuno.Movimientos.Paranormal_ESP_Arc);
           
         System.out.println("Articuno: Perdon por comerme tu gansito,te voy a comprar 2");
-        System.out.println("Moltres: Bueno,Muchas gracias:)");
+        System.out.println("Moltres: Bueno,Muchas gracias:)");*/
     }
     
 }

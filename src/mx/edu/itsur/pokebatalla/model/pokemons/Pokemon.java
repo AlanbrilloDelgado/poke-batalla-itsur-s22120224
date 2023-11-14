@@ -9,9 +9,9 @@ import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
 
 /**
  *
- * @author FJML1983
+ * @author AlanG
  */
-public class Pokemon {
+public abstract class Pokemon {
 
     //Atributos
     protected String tipo;
@@ -23,35 +23,52 @@ public class Pokemon {
     protected double precision;
 
     Pokemon() {
-    }
 
-    //Getters
-    public int getNivel() {
-        return nivel;
-    }
-    public int getAtaque() {
-        return ataque;
-    }    
-    public int getDefensa(){
-        return defensa;
-    }
-    
-    //Setters
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+        }
 
-    //Métodos 
-    public void recibirDanio(int danio){
-        this.hp = this.hp - danio;
-    }        
-    
+        public int getNivel() {
+            return nivel;
+        }
 
-    @Override
-    public String toString() {
+        public int gethp()
+        {
+            return hp;
+        }
 
-        return this.getClass().getSimpleName() + 
-                "{tipo:" + tipo + " hp:" + hp + "}";
+        public int getAtaque() {
+            return ataque;
+        }
+
+        public int getDefensa() {
+            return defensa;
+        }
+
+        public void setNombre(String nombre) {
+            this.nombre = nombre;
+        }
+
+        public void recibirDanio(int danio) {
+            this.hp = this.hp - danio;
+            if (this.hp <= 0) {
+                System.out.println(this.getClass().getSimpleName() + " YA NO PUEDE CONTINUAR");
+            }
+        }
+        
+        
+
+   
+        public abstract void atacar(Pokemon oponente, int ordinalMovimiento);
+
+        public abstract Enum[] getMovimientos();
+
+        @Override
+        public String toString() {
+            if (hp < 0) {
+                return this.getClass().getSimpleName() + "{tipo:" + tipo + " hp:" + "0" + "}";
+            } else {
+
+                return this.getClass().getSimpleName() + "{tipo:" + tipo + " hp:" + hp + "}";
+            }
+        }
+
     }
-
-}
