@@ -1,9 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ *
+ * @author Alan ArmandoGarcia Guzman
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
+import java.io.Serializable;
 import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
 import mx.edu.itsur.pokebatalla.model.moves.Impactrueno;
 import mx.edu.itsur.pokebatalla.model.moves.Latigo;
@@ -13,34 +14,44 @@ import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
  *
  * @author FJML1983
  */
-public class Charmander extends Pokemon {
+public class Charmander extends Pokemon implements Serializable{
 
     @Override
     public void atacar(Pokemon oponente, int ordinalMovimiento) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Charmander.Movimientos movimientoAUtilizar
+            = Charmander.Movimientos.values()[ordinalMovimiento];
+        
+         Movimiento instanciaMovimiento;
+        switch (movimientoAUtilizar) {
+            case ATAQUE_RAPIDO:
+                instanciaMovimiento = new AtaqueRapido();
+                break;
+            
+            
+            default:
+                throw new AssertionError();
+        }
+        instanciaMovimiento.utilizar(this, oponente);
     }
 
     @Override
     public Enum[] getMovimientos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         return Charmander.Movimientos.values();
     }
 
-    /**
-     * Movimientos que puede realizar el Pokémon
-     */
     public enum Movimientos {
-        ATAQUE_RAPIDO,
+        ATAQUE_RAPIDO
 
         //Otros movimientos...
     }
 
     public Charmander() {
-        tipo = "FUEGO";
-        hp = 39;
-        ataque = 52;
-        defensa = 43;
-        nivel = 1;
-        precision = 4;
+        this.tipo = "FUEGO";
+        this.hp = 39;
+        this.ataque = 52;
+        this.defensa = 43;
+        this.nivel = 1;
+        this.precision = 4;
     }
 
     //Constructor alterno 1
@@ -49,22 +60,5 @@ public class Charmander extends Pokemon {
         this.nombre = nombre;
     }
 
-    public void atacar(Pokemon oponente, Charmander.Movimientos movimientoAUtilizar) {
-
-        //Instanciar el movimiento solicitado
-        Movimiento instanciaMovimiento;
-        switch (movimientoAUtilizar) {
-            case ATAQUE_RAPIDO:
-                instanciaMovimiento = new AtaqueRapido();
-                break;
-
-            //Otros movimientos aquí...
-            default:
-                throw new AssertionError();
-        }
-
-        //Aplicar el movimiento
-        instanciaMovimiento.utilizar(this, oponente);
-
-    }
+    
 }

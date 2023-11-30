@@ -4,11 +4,13 @@
  */
 package mx.edu.itsur.pokebatalla.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author FJML1983
  */
-public class Bullbasaur extends Pokemon {
+public class Bullbasaur extends Pokemon implements Serializable {
 
     public Bullbasaur() {
         tipo = "PLANTA/VENENO";

@@ -4,6 +4,7 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
 import mx.edu.itsur.pokebatalla.model.moves.Impactrueno;
@@ -14,16 +15,32 @@ import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
  *
  * @author FJML1983
  */
-public class Pikachu extends Pokemon {
+public class Pikachu extends Pokemon implements Serializable {
 
     @Override
     public void atacar(Pokemon oponente, int ordinalMovimiento) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Pikachu.Movimientos movimientoAUtilizar
+                = Pikachu.Movimientos.values()[ordinalMovimiento];
+        Movimiento instanciaMovimiento;        
+        switch (movimientoAUtilizar) {
+            case IMPACTRUENO:
+                instanciaMovimiento = new Impactrueno();
+                break;
+            case ATAQUE_RAPIDO:
+                instanciaMovimiento = new AtaqueRapido();
+                break;
+            case LATIGO:
+                instanciaMovimiento = new Latigo();
+                break;
+        
+            default:
+                throw new AssertionError();
+        }
     }
 
     @Override
     public Enum[] getMovimientos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return Articuno.Movimientos.values();
     }
 
     /**
@@ -52,29 +69,8 @@ public class Pikachu extends Pokemon {
         this(); //invocando al constructor default
         this.nombre = nombre;
     }
-
-    public void atacar(Pokemon oponente, Pikachu.Movimientos movimientoAUtilizar) {
-
-        //Instanciar el movimiento solicitado
-        Movimiento instanciaMovimiento;        
-        switch (movimientoAUtilizar) {
-            case IMPACTRUENO:
-                instanciaMovimiento = new Impactrueno();
-                break;
-            case ATAQUE_RAPIDO:
-                instanciaMovimiento = new AtaqueRapido();
-                break;
-            case LATIGO:
-                instanciaMovimiento = new Latigo();
-                break;
-
-            //Otros movimientos aquí...                
-            default:
-                throw new AssertionError();
-        }
-
-        //Aplicar el movimiento.
-        instanciaMovimiento.utilizar(this, oponente);
-    }
-
 }
+        
+    
+
+

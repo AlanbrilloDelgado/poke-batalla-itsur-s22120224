@@ -4,11 +4,13 @@
  */
 package mx.edu.itsur.pokebatalla.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author FJML1983
  */
-public class Charmander extends Pokemon {
+public class Charmander extends Pokemon implements Serializable{
     public Charmander(){
         tipo = "FUEGO";
         hp = 39;

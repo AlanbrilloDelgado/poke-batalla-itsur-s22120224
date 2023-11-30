@@ -4,13 +4,14 @@
  */
 package mx.edu.itsur.pokebatalla.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author FJML1983
  */
-public class Pikachu  extends Pokemon{
+public class Pikachu  extends Pokemon implements Serializable{
 
     //Constructor default
     public Pikachu() {

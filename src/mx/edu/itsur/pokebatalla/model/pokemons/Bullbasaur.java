@@ -4,24 +4,40 @@
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
+import java.io.Serializable;
 import mx.edu.itsur.pokebatalla.model.moves.AtaqueRapido;
 import mx.edu.itsur.pokebatalla.model.moves.Latigo;
 import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
 
 /**
  *
- * @author FJML1983
+ * @author Alan ArmandoGarcia Guzman
  */
-public class Bullbasaur extends Pokemon {
+public class Bullbasaur extends Pokemon implements Serializable{
 
     @Override
     public void atacar(Pokemon oponente, int ordinalMovimiento) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Bullbasaur.Movimientos movimientoAUtilizar
+            = Bullbasaur.Movimientos.values()[ordinalMovimiento];
+
+ Movimiento instanciaMovimiento;
+        switch (movimientoAUtilizar) {
+            case ATAQUE_RAPIDO:
+                instanciaMovimiento = new AtaqueRapido();
+                break;
+            case LATIGO:
+                instanciaMovimiento = new Latigo();
+                break;
+
+            //Otros movimientos aquí...
+            default:
+                throw new AssertionError();
+}
     }
 
     @Override
     public Enum[] getMovimientos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return Bullbasaur.Movimientos.values();
     }
 
     public enum Movimientos {
@@ -44,26 +60,6 @@ public class Bullbasaur extends Pokemon {
         this.nombre = nombre;
 
     }
-     public void atacar(Pokemon oponente, Bullbasaur.Movimientos movimientoAUtilizar) {
-
-        //Instanciar el movimiento solicitado
-        Movimiento instanciaMovimiento;
-        switch (movimientoAUtilizar) {
-            case ATAQUE_RAPIDO:
-                instanciaMovimiento = new AtaqueRapido();
-                break;
-            case LATIGO:
-                instanciaMovimiento = new Latigo();
-                break;
-
-            //Otros movimientos aquí...
-            default:
-                throw new AssertionError();
-        }
-
-        //Aplicar el movimiento
-        instanciaMovimiento.utilizar(this, oponente);
-
-    }
+     
 
 }

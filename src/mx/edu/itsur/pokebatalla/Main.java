@@ -7,7 +7,9 @@ package mx.edu.itsur.pokebatalla;
 
 import mx.edu.itsur.pokebatalla.battles.Batalla;
 import mx.edu.itsur.pokebatalla.battles.Entrenador;
+import mx.edu.itsur.pokebatalla.model.Archivos.Filemajer;
 import mx.edu.itsur.pokebatalla.model.pokemons.Articuno;
+import mx.edu.itsur.pokebatalla.model.pokemons.Pikachu;
 import mx.edu.itsur.pokebatalla.model.pokemons.Zapdos;
 import mx.edu.itsur.pokebatalla.model.pokemons.Moltres;
 
@@ -21,54 +23,29 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-       
-          //Unidad 4 
-        Articuno Artc1 =  new Articuno();
-        Zapdos Zpd = new Zapdos();    
-        Moltres Mlts =new Moltres();
+        
+        Batalla batalla = Filemajer.leerPartida();
+        
+        if (batalla==null)
+        {
+        Articuno Artc1 =  new Articuno("Chucho");
+        Zapdos Zpd = new Zapdos("Cris");    
+        Moltres Mlts =new Moltres("Erick");
+        Pikachu pik1 = new Pikachu("Pablo");
         
 
-        Entrenador entre1 = new Entrenador("Chakalito");
-        entre1.capturarPokemon(Artc1);
-        entre1.capturarPokemon(Zpd);
+        Entrenador e1 = new Entrenador("Andrea");
+        e1.capturarPokemon(Artc1);
+        e1.capturarPokemon(Zpd);
 
-        Entrenador entre2 = new Entrenador("Chakalita");
-        entre2.capturarPokemon(Zpd);
-        entre2.capturarPokemon(Mlts);
-
-        Batalla x = new Batalla(entre1, entre2);
-        x.desarrollarBatalla();
+       Entrenador e2 = new Entrenador("Alan");
         
+        e2.capturarPokemon(Mlts);
+        e2.capturarPokemon(pik1);
         
-        
-      /*    UNIDAD 3
-        System.out.println("->Pikachu se encuentra con un Charmander y ataca");
-        pika.atacar(charm, Pikachu.Movimientos.IMPACTRUENO);
-        
-    //Articuno  vs Pika
-        System.out.println("Articuno: Hola Moltres");
-        System.out.println("Moltres:  Hola Articuno oye una pregunta");
-        System.out.println("Articuno: Si,dime");
-        System.out.println("Moltres:  Tu te comiste mi gansito?");
-        System.out.println("Articuno: ...");
-        System.out.println("Moltres:  Responde");
-        System.out.println("Articuno: Si asi fue");
-        System.out.println("Moltres: :0");
-        System.out.println("Moltres: M e las vas a pagar");
-        System.out.println("-------------------------");
-        System.out.println("INICIANDO BATALLA");
-        System.out.println("-------------------------");
-        
-        Mlts.atacar(Artc1, Moltres.Movimientos.Ataque_Ala_FSC_Mlts);
-        Artc1.atacar(Mlts, Articuno.Movimientos.Rayo_Hielo_FSC_Arc);
-        Mlts.atacar(Artc1, Moltres.Movimientos.Ascuas_ESP_Mlts);
-        Artc1.atacar(Mlts, Articuno.Movimientos.Paisaje_Nevado_ESTD_Arc);
-        Mlts.atacar(Artc1, Moltres.Movimientos.Dia_Soleado_ESTD_Mlts);
-        Artc1.atacar(Mlts, Articuno.Movimientos.Paranormal_ESP_Arc);
-          
-        System.out.println("Articuno: Perdon por comerme tu gansito,te voy a comprar 2");
-        System.out.println("Moltres: Bueno,Muchas gracias:)");*/
+        batalla = new Batalla(e1, e2);
+        }
+        batalla.desarrollarBatalla();
     }
     
 }

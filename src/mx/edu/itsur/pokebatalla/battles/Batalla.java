@@ -3,13 +3,15 @@ package mx.edu.itsur.pokebatalla.battles;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Serializable;
+import mx.edu.itsur.pokebatalla.model.Archivos.Filemajer;
 import mx.edu.itsur.pokebatalla.model.pokemons.Pokemon;
 
 /**
  *
  * @author aLANg
  */
-public class Batalla {
+public class Batalla implements Serializable {
 
     protected Entrenador entrenador1;
     protected Entrenador entrenador2;
@@ -23,6 +25,10 @@ public class Batalla {
         this.entrenador2 = entrenador2;
     }
 
+    public void Guardar() {
+        Filemajer.guardarPartida(this);
+    }
+
     public void desarrollarBatalla() {
         System.out.println(" Batalla ");
         System.out.println("Pelea entre ");
@@ -30,8 +36,23 @@ public class Batalla {
 
         System.out.println("");
 
-        eligirPokemon(entrenador1);
-        eligirPokemon(entrenador2);
+        do {
+            try {
+                eligirPokemon(entrenador1);
+            } catch (IndexOutOfBoundsException e) {
+                System.out.println("Solamente cuentas con:  " + "{" + entrenador1.getPokemonsCapturados().size() + "}" + "  Elige alguno de tus Pokemons");
+                entrenador1.setPokemonActual(null);
+            }
+        } while (entrenador1.getPokemonActual() == null);
+
+        do {
+            try {
+                eligirPokemon(entrenador2);
+            } catch (IndexOutOfBoundsException e) {
+                System.out.println("Solamente cuentas con:  " + "{" + entrenador2.getPokemonsCapturados().size() + "}" + "  Elige alguno de tus Pokemons");
+                entrenador2.setPokemonActual(null);
+            }
+        } while (entrenador2.getPokemonActual() == null);
 
         while (!batallaFinalizada) {
             Entrenador entrenadorEnTurno = (turno == 1) ? entrenador1 : entrenador2;
@@ -39,17 +60,15 @@ public class Batalla {
 
             System.out.println("Turno del entrenador: " + entrenadorEnTurno.getNombre());
 
-           
             if (entrenadorEnTurno.getPokemonActual() == null || entrenadorEnTurno.getPokemonActual().gethp() <= 0) {
                 cambiarPokemon(entrenadorEnTurno);
             }
-           
+
             if (oponente.getPokemonActual() == null) {
                 System.out.println("El oponente no ha a seleccionado un pokemon actual");
                 return;
             }
 
-  
             seleccionarAtaque(entrenadorEnTurno, oponente.getPokemonActual());
 
             Pokemon pokemonEnTurno = entrenadorEnTurno.getPokemonActual();
@@ -58,17 +77,24 @@ public class Batalla {
                 System.out.println("El personaje " + oponente.getNombre() + "Se fue");
                 batallaFinalizada = true;
             } else {
-              
+                Guardar();
                 turno = (turno == 1) ? 2 : 1;
             }
         }
     }
 
     private void eligirPokemon(Entrenador EnTn) {
-        
+        int idx = 1;
         System.out.println("");
         System.out.println("Elige un  pokemon " + EnTn.getNombre());
-
+        for (Pokemon pokemon : EnTn.getPokemonsCapturados()) {
+            if (pokemon.gethp() < 0) {
+                System.out.println(idx + ".- " + pokemon.getClass().getSimpleName() + "  0");
+            } else {
+                System.out.println(idx + ".- " + pokemon.getClass().getSimpleName() + " " + pokemon.gethp());
+            }
+            idx++;
+        }
         char auxLectura = '0';
 
         try {
@@ -83,7 +109,6 @@ public class Batalla {
         EnTn.setPokemonActual(pokemonSeleccionado);
     }
 
-   
     private void seleccionarAtaque(Entrenador entrenadorEnturno, Pokemon oponente) {
 
         Pokemon pokemonActual = entrenadorEnturno.getPokemonActual();
@@ -113,10 +138,8 @@ public class Batalla {
             return;
         }
 
-       
         entrenadorEnturno.instruirMovimientoAlPokemonActual(oponente, opcionAtaque - 1);
     }
-
 
     private void cambiarPokemon(Entrenador entrenador) {
         System.out.println("Quieres cambiar de pokemon ? ");
@@ -139,7 +162,6 @@ public class Batalla {
                 idx++;
             }
 
-   
             System.out.println("Elige un Pokemon:");
 
             char auxLectura = '0';
