@@ -40,6 +40,7 @@ public class Batalla implements Serializable {
             try {
                 eligirPokemon(entrenador1);
             } catch (IndexOutOfBoundsException e) {
+                System.out.println("Recuerda añadir solo numeros enteros,(Hay un limite de 1-2)");
                 System.out.println("Solamente cuentas con:  " + "{" + entrenador1.getPokemonsCapturados().size() + "}" + "  Elige alguno de tus Pokemons");
                 entrenador1.setPokemonActual(null);
             }
@@ -49,6 +50,7 @@ public class Batalla implements Serializable {
             try {
                 eligirPokemon(entrenador2);
             } catch (IndexOutOfBoundsException e) {
+                System.out.println("Recuerda añadir solo numeros enteros,(Hay un limite de 1-2)");
                 System.out.println("Solamente cuentas con:  " + "{" + entrenador2.getPokemonsCapturados().size() + "}" + "  Elige alguno de tus Pokemons");
                 entrenador2.setPokemonActual(null);
             }
