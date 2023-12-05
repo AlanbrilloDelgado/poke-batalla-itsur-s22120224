@@ -1,8 +1,7 @@
 /**
  *
- * @author Alan ArmandoGarcia Guzman
+ * @author Alan Armando Garcia Guzman
  */
-
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
 import java.io.Serializable;

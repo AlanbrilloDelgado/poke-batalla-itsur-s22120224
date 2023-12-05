@@ -1,8 +1,9 @@
-package mx.edu.itsur.pokebatalla.model.moves;
 /**
  *
- * @author LMC Alumno
+ * @author Alan Armando Garcia Guzman
  */
+package mx.edu.itsur.pokebatalla.model.moves;
+
 public class Pico_Taladro_FSC_Zpds extends MovimientoFisico{
 public  Pico_Taladro_FSC_Zpds(){
     

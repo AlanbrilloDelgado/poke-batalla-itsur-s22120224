@@ -1,9 +1,9 @@
-package mx.edu.itsur.pokebatalla.model.moves;
-
 /**
  *
- * @author LMC Alumno
+ * @author Alan Armando Garcia Guzman
  */
+package mx.edu.itsur.pokebatalla.model.moves;
+
 public class Rayo_Hielo_FSC_Arc extends MovimientoFisico{
     public Rayo_Hielo_FSC_Arc() {
         this.tipo=Movimiento.TiposDeMovimiento.HIELO;

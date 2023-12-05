@@ -1,9 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ *
+ * @author Alan Armando Garcia Guzman
  */
 package mx.edu.itsur.pokebatalla.model.moves;
-
 import mx.edu.itsur.pokebatalla.model.pokemons.Pokemon;
 
 /**
@@ -12,8 +11,6 @@ import mx.edu.itsur.pokebatalla.model.pokemons.Pokemon;
  * es una técnica que los Pokémon son capaces de aprender 
  * y que usan en los combates con el fin de debilitar a sus oponentes.
  * https://www.wikidex.net/wiki/Movimiento
- * 
- * @author FJML1983
  */
 public class Movimiento {
 

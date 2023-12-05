@@ -1,8 +1,9 @@
-package mx.edu.itsur.pokebatalla.model.moves;
 /**
  *
- * @author LMC Alumno
+ * @author Alan Armando Garcia Guzman
  */
+package mx.edu.itsur.pokebatalla.model.moves;
+
 public class Onda_Trueno_ESTD_Zpds extends MovimientoEstado{
 public  Onda_Trueno_ESTD_Zpds(){
     

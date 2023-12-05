@@ -1,3 +1,7 @@
+/**
+ *
+ * @author Alan Armando Garcia Guzman
+ */
 package mx.edu.itsur.pokebatalla.battles;
 
 import java.io.Serializable;

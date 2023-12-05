@@ -1,9 +1,9 @@
-package mx.edu.itsur.pokebatalla.model.moves;
-
 /**
  *
- * @author LMC Alumno
+ * @author Alan Armando Garcia Guzman
  */
+package mx.edu.itsur.pokebatalla.model.moves;
+
 public class Dia_Soleado_ESTD_Mlts extends MovimientoEstado{
     public Dia_Soleado_ESTD_Mlts() {
         this.tipo=Movimiento.TiposDeMovimiento.FUEGO;

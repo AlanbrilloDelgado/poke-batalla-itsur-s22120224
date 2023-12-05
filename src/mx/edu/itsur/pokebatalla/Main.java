@@ -1,30 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+/**
+ *
+ * @author Alan Armando Garcia Guzman
  */
 package mx.edu.itsur.pokebatalla;
 
 
 import mx.edu.itsur.pokebatalla.battles.Batalla;
 import mx.edu.itsur.pokebatalla.battles.Entrenador;
-import mx.edu.itsur.pokebatalla.model.Archivos.Filemajer;
+import mx.edu.itsur.pokebatalla.model.Archivos.Filemager;
 import mx.edu.itsur.pokebatalla.model.pokemons.Articuno;
 import mx.edu.itsur.pokebatalla.model.pokemons.Pikachu;
 import mx.edu.itsur.pokebatalla.model.pokemons.Zapdos;
 import mx.edu.itsur.pokebatalla.model.pokemons.Moltres;
 
-/**
- *
- * @author AlanG
- */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         
-        Batalla batalla = Filemajer.leerPartida();
+        Batalla batalla = Filemager.leerPartida();
         
         if (batalla==null)
         {
@@ -34,7 +27,7 @@ public class Main {
         Pikachu pik1 = new Pikachu("Pablo");
         
 
-        Entrenador e1 = new Entrenador("Andrea");
+        Entrenador e1 = new Entrenador("Solovino");
         e1.capturarPokemon(Artc1);
         e1.capturarPokemon(Zpd);
 

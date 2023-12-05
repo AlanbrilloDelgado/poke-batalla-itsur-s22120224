@@ -1,9 +1,9 @@
-package mx.edu.itsur.pokebatalla.model.moves;
-
 /**
  *
- * @author LMC Alumno
+ * @author Alan Armando Garcia Guzman
  */
+package mx.edu.itsur.pokebatalla.model.moves;
+
 public class Ataque_Ala_FSC_Mlts extends MovimientoEspecial{
     public Ataque_Ala_FSC_Mlts() {
         this.tipo=Movimiento.TiposDeMovimiento.VOLADOR;

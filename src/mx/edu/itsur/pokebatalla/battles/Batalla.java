@@ -1,16 +1,16 @@
+/**
+ *
+ * @author Alan Armando Garcia Guzman
+ */
 package mx.edu.itsur.pokebatalla.battles;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Serializable;
-import mx.edu.itsur.pokebatalla.model.Archivos.Filemajer;
+import mx.edu.itsur.pokebatalla.model.Archivos.Filemager;
 import mx.edu.itsur.pokebatalla.model.pokemons.Pokemon;
 
-/**
- *
- * @author aLANg
- */
 public class Batalla implements Serializable {
 
     protected Entrenador entrenador1;
@@ -26,7 +26,7 @@ public class Batalla implements Serializable {
     }
 
     public void Guardar() {
-        Filemajer.guardarPartida(this);
+        Filemager.guardarPartida(this);
     }
 
     public void desarrollarBatalla() {

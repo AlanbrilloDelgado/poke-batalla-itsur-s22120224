@@ -1,6 +1,6 @@
 /**
  *
- * @author Alan ArmandoGarcia Guzman
+ * @author Alan Armando Garcia Guzman
  */
 package mx.edu.itsur.pokebatalla.model.pokemons;
 
@@ -10,10 +10,6 @@ import mx.edu.itsur.pokebatalla.model.moves.Impactrueno;
 import mx.edu.itsur.pokebatalla.model.moves.Latigo;
 import mx.edu.itsur.pokebatalla.model.moves.Movimiento;
 
-/**
- *
- * @author FJML1983
- */
 public class Charmander extends Pokemon implements Serializable{
 
     @Override

@@ -1,9 +1,9 @@
-package mx.edu.itsur.pokebatalla.model.moves;
-
 /**
  *
- * @author LMC Alumno
+ * @author Alan Armando Garcia Guzman
  */
+package mx.edu.itsur.pokebatalla.model.moves;
+
 public class Paranormal_ESP_Arc extends MovimientoEspecial{
     public Paranormal_ESP_Arc() {
         this.tipo=Movimiento.TiposDeMovimiento.PSIQUICO;
